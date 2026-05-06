@@ -1,0 +1,120 @@
+{
+  "trading": {
+    "enabled": true,
+    "mode": "analysis",
+    "pairs": [
+      "EURUSD",
+      "GBPUSD",
+      "USDJPY",
+      "AUDUSD",
+      "XAUUSD",
+      "BTCUSDT",
+      "ETHUSDT"
+    ],
+    "timeframes": [
+      "1m",
+      "5m",
+      "15m",
+      "1h",
+      "4h",
+      "1d"
+    ],
+    "confidence_threshold": 70,
+    "max_trades_per_day": 10,
+    "paper_trading": true
+  },
+  "risk_management": {
+    "risk_per_trade": 2,
+    "stop_loss_pips": 50,
+    "take_profit_pips": 100,
+    "max_position_size": 2.0,
+    "trailing_stop": false,
+    "trailing_stop_percent": 1.5
+  },
+  "indicators": {
+    "ema_fast": 20,
+    "ema_slow": 50,
+    "sma_period": 200,
+    "rsi_period": 14,
+    "rsi_overbought": 70,
+    "rsi_oversold": 30,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "macd_signal": 9,
+    "bollinger_period": 20,
+    "bollinger_std_dev": 2,
+    "atr_period": 14,
+    "stochastic_period": 14
+  },
+  "notifications": {
+    "telegram": {
+      "enabled": false,
+      "token": "",
+      "chat_id": ""
+    },
+    "discord": {
+      "enabled": false,
+      "webhook_url": ""
+    },
+    "email": {
+      "enabled": false,
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
+      "sender_email": "",
+      "sender_password": "",
+      "recipient_email": ""
+    }
+  },
+  "data_sources": {
+    "quotex": {
+      "enabled": true,
+      "base_url": "https://api.quotex.io",
+      "timeout": 30
+    },
+    "binance": {
+      "enabled": true,
+      "base_url": "https://api.binance.com",
+      "ws_url": "wss://stream.binance.com:9443"
+    },
+    "finnhub": {
+      "enabled": true,
+      "base_url": "https://finnhub.io/api/v1",
+      "api_key": "free",
+      "timeout": 30
+    }
+  },
+  "analysis": {
+    "pattern_recognition": true,
+    "multi_timeframe": true,
+    "support_resistance": true,
+    "volume_analysis": true,
+    "sentiment_analysis": false,
+    "machine_learning": false
+  },
+  "logging": {
+    "level": "INFO",
+    "console": true,
+    "file": true,
+    "file_path": "logs/bot.log",
+    "max_file_size": 10485760,
+    "backup_count": 5
+  },
+  "database": {
+    "enabled": true,
+    "type": "sqlite",
+    "sqlite_path": "data/trading_bot.db",
+    "postgresql": {
+      "host": "localhost",
+      "port": 5432,
+      "database": "trading_bot",
+      "user": "postgres",
+      "password": ""
+    }
+  },
+  "performance": {
+    "update_interval": 60,
+    "history_retention_days": 90,
+    "backtest_days": 30,
+    "threads": 4
+  }
+}
